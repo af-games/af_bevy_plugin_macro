@@ -1,0 +1,11 @@
+[package]
+name = "af_bevy_plugin_macro"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+quote = "1.0.35"
+syn = "2.0.48"
+convert_case = "0.6.0"
+[lib]
+proc-macro = true
