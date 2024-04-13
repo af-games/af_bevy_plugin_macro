@@ -4,6 +4,38 @@
 
 Automates generation of bevy plugins boilerplate.
 
+## Usage
+
+Let's say you have a Bevy crate called `Foo` consisting of two plugins, `ControlPlugin` and `DisplayPlugin`. You might write a `lib.rs` like this:
+
+```rs
+use bevy::prelude::*;
+pub mod control;
+pub use control::*;
+pub mod display;
+pub use display::*;
+
+pub struct FooPlugins;
+use bevy::{app::PluginGroupBuilder, app::PluginGroup};
+impl PluginGroup for FooPlugins {
+    fn build(self) -> PluginGroupBuilder {
+        PluginGroupBuilder::start::<Self>()
+                .add(control::ControlPlugin)
+                .add(display::DisplayPlugin)
+    }
+}
+```
+
+Replace this with:
+
+```rs
+use af_bevy_plugin_macro::bevy_plugin_group;
+
+bevy_plugin_group!(foo, control, display);
+```
+
+Much better!
+
 ## License
 
 AF Bevy Plugin Macro is free, open source and permissively licensed!
