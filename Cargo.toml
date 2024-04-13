@@ -2,6 +2,11 @@
 name = "af_bevy_plugin_macro"
 version = "0.1.0"
 edition = "2021"
+readme = "README.md"
+description = "Automates generation of bevy plugins boilerplate."
+license = "MIT OR Apache-2.0"
+keywords = ["bevy", "plugin", "macro"]
+repository = "https://github.com/af-games/af_bevy_plugin_macro"
 
 [dependencies]
 quote = "1.0.35"
