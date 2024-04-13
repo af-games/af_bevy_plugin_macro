@@ -29,6 +29,7 @@ impl PluginGroup for FooPlugins {
 Replace this with:
 
 ```rs
+use bevy::prelude::*;
 use af_bevy_plugin_macro::bevy_plugin_group;
 
 bevy_plugin_group!(foo, control, display);
